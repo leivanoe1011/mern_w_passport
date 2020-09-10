@@ -1,0 +1,33 @@
+{
+  "name": "mern_w_passport",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon app.js",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leivanoe1011/mern_w_passport.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/leivanoe1011/mern_w_passport/issues"
+  },
+  "homepage": "https://github.com/leivanoe1011/mern_w_passport#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.0",
+    "bcryptjs": "^2.4.3",
+    "client": "0.0.1",
+    "cookie-parser": "^1.4.5",
+    "create-react-app": "^3.4.1",
+    "express": "^4.17.1",
+    "mongoose": "^5.10.4",
+    "passport": "^0.4.1",
+    "passport-jwt": "^4.0.0",
+    "passport-local": "^1.0.0"
+  }
+}
