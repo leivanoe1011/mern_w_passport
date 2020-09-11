@@ -1,19 +1,19 @@
 
 // we going to bring in the hook, since this is a functional component
-import React,{useContext} from 'react';
-import {AuthContext} from "./Context/AuthContext";
+import React from 'react';
+import Navbar from "./Components/Navbar";
+import Home from "./Components/Home";
+import {BrowserRouter as Router, Route} from "react-router-dom";
 
 
 function App() {
   
-  // The useContext function is coming from the AuthContext
-  const {user, setUser, isAuthenticated, setIsAuthenticated} = useContext(AuthContext);
-
-  console.log(user);
-  console.log(isAuthenticated);
-
+  // exact will match the route exactly 
   return (
-    <p>Place holder</p>
+    <Router>
+      <Navbar/>
+      <Route exact path="/" component={Home} />
+    </Router>
   );
 }
 

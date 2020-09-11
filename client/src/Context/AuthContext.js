@@ -13,6 +13,7 @@ export const AuthContext = createContext();
 export default ({ children }) => {
 
     // hook will allow us to maintain the state within a functional component
+    // Below we use Square Brackets " [ ] " because it's a function
     const [user, setUser] = useState(null);
     const [isAuthenticated, setIsAuthenticated] = useState(false);
     const [isLoaded, setIsLoaded] = useState(false); // is the app loaded to make a request to the server
@@ -23,15 +24,15 @@ export default ({ children }) => {
             setUser(data.user);
             setIsAuthenticated(data.isAuthenticated);
             setIsLoaded(true);
-        })
-    }, [])
+        });
+    }, []);
 
     return (
+        // The value will say What do we want to make available as a global state
+        // Here if any component want to update the states, we provide the values below
         <div>
             {!isLoaded ? <h1>Loading</h1> 
             : 
-            // The value will say What do we want to make available as a global state
-            // Here if any component want to update the states, we provide the values below
             <AuthContext.Provider value={{user,setUser,isAuthenticated, setIsAuthenticated}}> 
                 { children }
             </AuthContext.Provider>}

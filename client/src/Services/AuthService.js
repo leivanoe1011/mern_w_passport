@@ -44,7 +44,9 @@ export default {
                 
                 // Means that this is a response we wrote ourselves
                 // passport actually sends a 401
-                if(res.status !== 401) return res.json().then(data => data);
+                if(res.status !== 401) {
+                    return res.json().then(data => data);
+                }
                 else {
                     // passport is sending a 401 code
                     return {isAuthenticated : false, user : {username : "" , role : ""}};
