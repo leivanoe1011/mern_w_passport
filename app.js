@@ -13,27 +13,35 @@ mongoose.connect('mongodb://localhost/mern_w_passport', {useNewUrlParser: true, 
 });
 
 
-const User = require("./models/User");
+const userRouter = require("./routes/User");
 
-const userInput = {
-    username : "noobcoder1234",
-    password: "1234567",
-    role : "admin"
-}
+app.use("/user",userRouter);
 
-// create Mongoose Doc
-const user = new User(userInput);
-user.save((err, document)=>{
-    if(err) console.log(err);
 
-    console.log(document);
-})
 
 
 app.listen(PORT, ()=>{
-    console.log("Express server started");
+    console.log(`Express server listening to PORT : ${PORT}`);
 });
 
+
+
+// Temporary user
+
+// const User = require("./models/User");
+// const userInput = {
+//     username : "noobcoder1234",
+//     password: "1234567",
+//     role : "admin"
+// }
+
+// create Mongoose Doc
+// const user = new User(userInput);
+// user.save((err, document)=>{
+//     if(err) console.log(err);
+
+//     console.log(document);
+// })
 
 
 

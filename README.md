@@ -3,6 +3,36 @@
 
 https://github.com/leivanoe1011/mern_w_passport.git
 
+http://localhost:5000/user/register
+Registration Body
+{
+    "username" : "testing1",
+    "password" : "testing123",
+    "role" : "user"
+}
+
+
+http://localhost:5000/user/login
+
+Login Body
+{
+    "username" : "testing1",
+    "password" : "testing123"
+}
+
+
+http://localhost:5000/user/logout
+
+
+http://localhost:5000/user/todo
+
+{
+    "name" : "todoTest1"
+}
+
+http://localhost:5000/user/todos
+
+
 MongoDB(Mongoose ORM) - Database
 
 
@@ -27,3 +57,9 @@ passport-local
 strategy authenticate against the database using username and password
 
 passport-jwt
+
+
+json web token
+sign jwt token
+
+

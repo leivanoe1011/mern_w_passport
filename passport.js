@@ -39,6 +39,7 @@ passport.use(new JwtStrategy({
 
 // authenticated local strategy using username and password
 // done is a function that will get executed when done
+// this below gets called when rendering the following passport.authenticate("local")
 passport.use(new LocalStrategy((username, password, done) =>{
 
     // After authenticated we are going to set up the jwt cookie
