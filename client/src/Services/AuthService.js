@@ -12,9 +12,14 @@ export default {
             }
         })
         .then(res => {
-            res.json()
+            if(res.status !== 401) {
+                return res.json().then(data => data);
+            }
+            else {
+                // passport is sending a 401 code
+                return {isAuthenticated : false, user : {username : "" , role : ""}};
+            }
         })
-        .then(data => data);
     },
     register : user => {
         return fetch("/user/register", {
